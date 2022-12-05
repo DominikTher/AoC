@@ -8,7 +8,7 @@ internal class Day2 : IDay
 
     public int DayNumber => 2;
 
-    public int PartOne(IEnumerable<string> rows)
+    public object PartOne(IEnumerable<string> rows)
     {
         var strategy = new Dictionary<string, (int, int)>
         {
@@ -33,7 +33,7 @@ internal class Day2 : IDay
         return totalScore;
     }
 
-    public int PartTwo(IEnumerable<string> rows)
+    public object PartTwo(IEnumerable<string> rows)
     {
         var strategy = new Dictionary<string, (int, int)>
         {

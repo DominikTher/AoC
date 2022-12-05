@@ -8,7 +8,7 @@ internal class Day3 : IDay
 
     public int DayNumber => 3;
 
-    public int PartOne(IEnumerable<string> rows)
+    public object PartOne(IEnumerable<string> rows)
     {
         var result = 0;
 
@@ -35,7 +35,7 @@ internal class Day3 : IDay
         return result;
     }
 
-    public int PartTwo(IEnumerable<string> rows)
+    public object PartTwo(IEnumerable<string> rows)
     {
         var result = 0;
 

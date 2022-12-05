@@ -7,7 +7,7 @@ internal sealed class Day1 : IDay
     public int Year => 2022;
     public int DayNumber => 1;
 
-    public int PartOne(IEnumerable<string> rows)
+    public object PartOne(IEnumerable<string> rows)
     {
         var localMax = 0;
         var max = 0;
@@ -29,7 +29,7 @@ internal sealed class Day1 : IDay
         return Math.Max(max, localMax); ;
     }
 
-    public int PartTwo(IEnumerable<string> rows)
+    public object PartTwo(IEnumerable<string> rows)
     {
         var max = 0;
         var values = new List<int>();
