@@ -25,7 +25,7 @@ static class Program
 
         container.Register<IDayExecuter, DayExecuter>();
 
-        var httpClientInstanceCreator = () => new HttpClient(GetHttpClientHandler())
+        static HttpClient httpClientInstanceCreator() => new(GetHttpClientHandler())
         {
             BaseAddress = new Uri($"https://adventofcode.com/")
         };
@@ -35,11 +35,13 @@ static class Program
         container.Verify();
     }
 
-    static async Task Main(string[] args)
+    static async Task Main()
     {
         var dayExecuter = container.GetInstance<IDayExecuter>();
 
         await dayExecuter.Execute(int.Parse(secrets[0]), int.Parse(secrets[1]));
+
+        container.Dispose();
     }
 
     private static HttpMessageHandler GetHttpClientHandler()
