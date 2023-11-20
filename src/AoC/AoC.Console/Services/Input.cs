@@ -9,6 +9,8 @@ internal sealed class Input : IInput
     private readonly IFileChecker fileChecker;
     private readonly IFileReader fileReader;
 
+    private static readonly string[] separator = ["\r\n", "\r", "\n"];
+
     public Input(
         HttpClient httpClient, 
         IFileWriter fileWriter, 
@@ -38,7 +40,7 @@ internal sealed class Input : IInput
         }
 
         return content
-            .Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None)
+            .Split(separator, StringSplitOptions.None)
             .AsEnumerable();
     }
 }

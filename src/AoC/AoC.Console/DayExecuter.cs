@@ -18,7 +18,9 @@ internal sealed class DayExecuter : IDayExecuter
 	public async Task Execute(int year, int dayNumber)
 	{
 		var day = days.First(d => d.Year == year && d.DayNumber == dayNumber);
-		var rows = await input.GetRows(year, day.DayNumber);
+        // IAsyncEnumerable?
+        // TODO Downloader first if missing
+        var rows = await input.GetRows(year, day.DayNumber);
 
 		var partOneResult = day.PartOne(rows);
 		writer.WriteLine($"PartOne: {partOneResult}");
