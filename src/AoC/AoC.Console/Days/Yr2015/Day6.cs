@@ -2,7 +2,7 @@
 
 namespace AoC.Console.Days.Yr2015;
 
-internal class Day6 : IDay
+public sealed class Day6 : IDay
 {
     public int Year => 2015;
 

@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace AoC.Console.Days.Yr2015;
 
-internal class Day8 : IDay
+public sealed class Day8 : IDay
 {
     public int Year => 2015;
 
