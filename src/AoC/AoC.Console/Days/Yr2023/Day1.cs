@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace AoC.Console.Days.Yr2023;
 
-internal sealed class Day1 : IDay
+public sealed class Day1 : IDay
 {
     public int Year => 2023;
     public int DayNumber => 1;
