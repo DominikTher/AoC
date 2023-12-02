@@ -26,14 +26,17 @@ public sealed class Day2 : IDay
             .Sum();
 
     private static Cube ParseCube(string row)
-    {
-        var id = int.Parse(Regex.Match(row, @"Game (\d+)").Groups[1].Value);
-        var red = Regex.Matches(row, @"(\d+) red").Max(x => int.Parse(x.Groups[1].Value));
-        var green = Regex.Matches(row, @"(\d+) green").Max(x => int.Parse(x.Groups[1].Value));
-        var blue = Regex.Matches(row, @"(\d+) blue").Max(x => int.Parse(x.Groups[1].Value));
+        => new(
+            ParseInt(row, @"Game (\d+)").First(),
+            ParseInt(row, @"(\d+) red").Max(),
+            ParseInt(row, @"(\d+) green").Max(),
+            ParseInt(row, @"(\d+) blue").Max());
 
-        return new Cube(id, red, green, blue);
-    }
+    private static IEnumerable<int> ParseInt(string row, string pattern)
+        => Regex
+            .Matches(row, pattern)
+            .Select(x => int.Parse(x.Groups[1].Value));
+
 
     //public object PartOne(IEnumerable<string> rows)
     //{
