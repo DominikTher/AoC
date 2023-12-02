@@ -34,9 +34,9 @@ public sealed class Day2 : IDay
                 foreach (var set in sets)
                 {
                     var cube = set.Trim().Split(" ");
-                    (int Count, string Cube) items = (int.Parse(cube[0]), cube[1]);
+                    (int Count, string Cube) = (int.Parse(cube[0]), cube[1]);
 
-                    if (rules[items.Cube] < items.Count)
+                    if (rules[Cube] < Count)
                     {
                         return true;
                     }
