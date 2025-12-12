@@ -20,6 +20,8 @@ public sealed class Day5 : IDay
 
     public object PartTwo(IEnumerable<string> rows)
     {
+        // TODO: Optimize
+
         var ranges = Parse(rows.WithoutNullOrWhiteSpace())
             .Where(x => x.End != null)
             .Select(x => (x.Start, End: x.End!.Value));
